@@ -1,2 +1,1 @@
-# redhat-assignment
-
+# owncloud-quickstart
