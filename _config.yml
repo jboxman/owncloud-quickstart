@@ -1,0 +1,3 @@
+theme: jekyll-theme-minimal
+title: Getting started with ownCloud
+description: Run ownCloud under Docker and connect from a computer or mobile device.
