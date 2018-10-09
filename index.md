@@ -1,8 +1,8 @@
 # Getting started with ownCloud
 
-With [ownCloud](https://owncloud.org/) your data is accessible from anywhere on
-your computer, tablet, or mobile phone. ownCloud runs on and stores your data on
-servers you manage.
+With [ownCloud](https://owncloud.org/) your data is accessible from anywhere
+using your computer, tablet, or mobile phone. ownCloud runs on and stores your
+data on servers you manage.
 
 This guide discusses the following topics:
 
@@ -19,17 +19,18 @@ configure your ownCloud server, read [Installing with Docker][installing].
 
 ## Allowing access on port 8080
 
-By default, ownCloud listens on port `80` and port `443`. Complete the following
-steps to configure ownCloud to listen on a different port.
+By default, ownCloud listens on port `443` for SSL connections. Complete the
+following steps to configure ownCloud to listen on a different port.
 
 1.  Change to the directory where the `.env` file you created in [Installing and
-    configuring ownCloud](#installing-and-configuring-owncloud) exists.
-1.  Execute the following command to change the HTTPS port to `8080`:
+    configuring ownCloud](#installing-and-configuring-owncloud) exists. For example:
 
     ```bash
-    $ sed -i 's/^HTTPS_PORT=.*$/HTTPS_PORT=8080/' .env
+    $ cd docker
     ```
 
+1.  Open the `.env` file and change the `HTTPS_PORT` variable to `8080`, and
+    then save the file.
 1.  Stop your ownCloud instance by executing `docker-compose down`:
 
     ```
@@ -53,7 +54,8 @@ steps to configure ownCloud to listen on a different port.
     Creating docker_owncloud_1 ... done
     ```
 
-1.  To confirm ownCloud is listening on port `8080` execute: `docker-compose ps`:
+1.  To confirm ownCloud is listening on port `8080` run `docker-compose ps`. You
+    will see output similar to the following:
 
     ```
     $ docker-compose ps
@@ -64,17 +66,19 @@ steps to configure ownCloud to listen on a different port.
     docker_redis_1      /usr/bin/entrypoint /bin/s ...   Up (healthy)   6379/tcp
     ```
 
-Your ownCloud instance will be accessible on port `8080`.
+Your ownCloud instance will be accessible on port `8080`. To access it, use
+`https://<server>:8080/` as the server address. Replace `server` with your
+ownCloud hostname or IP address.
 
 ## Adding a user account
 
 To add a new [standard user][user] account, complete the following steps:
 
 1.  On your computer, go to `https://<server>/`. Replace `server` with the
-    domain name or IP address of your ownCloud server.
+    hostname or IP address of your ownCloud server.
 1.  Enter your ownCloud username and password, and then click the **right
     arrow** icon to sign in.
-1.  In the upper-right corner of the page, click your username, and then click
+1.  In the upper-right side of the page, click your username, and then click
     **Users**.
 1.  At the top of the page, enter the following information:
     - In the **Username** field, enter a username
@@ -84,8 +88,8 @@ To add a new [standard user][user] account, complete the following steps:
 1.  Click **Create**.
 
 ownCloud will send an email to the user's email address with an activation link
-to set the account password. If you want to a user to have group admin or super
-admin capability, read [Granting Administrator Privileges to a User][admin].
+to set the account password. If you want to a user to have Group Administrator or Super 
+Administrator privileges, read [Granting Administrator Privileges to a User][admin].
 
 ## Connecting to ownCloud with a desktop or mobile phone
 
@@ -101,13 +105,13 @@ ownCloud from your computer, complete the following steps:
 1.  After the download finishes, run the installer to start the ownCloud
     Connection Wizard.
 1.  In the **Server Address** field, enter the URL for your ownCloud server. For
-    example, `https://<server>/`. Replace `server` with your ownCloud domain
-    name or IP address.
+    example, `https://<server>/`. Replace `server` with your ownCloud hostname
+    or IP address.
 1.  Click **Next**. If you are using a self-signed TLS certificate, the
     **Untrusted Certificate** window is displayed. Click **Trust this
     certificate anyway** and click **OK**.
 1.  Enter values for the following fields:
-    - **Username**: Your oneCloud username
+    - **Username**: Your ownCloud username
     - **Password**: Your password
 1.  Click **Next**.
 1.  Click **Connect**. ownCloud will begin synchronizing your files and
@@ -127,9 +131,9 @@ following steps:
 1.  Open the ownCloud app on your device.
 1.  Enter values for the following fields:
     - **Server Address**: URL for your ownCloud server. For example,
-      `https://<server>/`. Replace `server` with your ownCloud domain name or IP
+      `https://<server>/`. Replace `server` with your ownCloud hostname or IP
       address.
-    - **Username**: Your oneCloud username
+    - **Username**: Your ownCloud username
     - **Password**: Your password
 1.  Tap **Connect**. If you are using a self-signed TLS certificate, you may be
     asked to trust the certificate.
