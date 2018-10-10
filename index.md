@@ -1,8 +1,8 @@
 # Getting started with ownCloud
 
-With [ownCloud](https://owncloud.org/) your data is accessible from anywhere
-using your computer, tablet, or mobile phone. ownCloud runs on and stores your
-data on servers you manage.
+With [ownCloud](https://owncloud.org/) your data is accessible from anywhere on
+your computer, tablet, or mobile phone. ownCloud runs on and stores your data on
+servers that you manage.
 
 This guide discusses the following topics:
 
@@ -123,7 +123,7 @@ Synchronization Client][desktop].
 
 ### Connecting to ownCloud with a mobile device
 
-To connect from ownCloud from your tablet or mobile phone, complete the
+To connect to ownCloud from your tablet or mobile phone, complete the
 following steps:
 
 1.  From your computer, visit <https://owncloud.com/download/> and scan the QR
