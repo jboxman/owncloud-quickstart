@@ -14,13 +14,13 @@ This guide discusses the following topics:
 ## Installing and configuring ownCloud
 
 You can install ownCloud with [Docker Compose][compose]. You must have [Docker
-installed][docker] on the computer you intend to run ownCloud on. To install and
+installed][docker] on the computer you want to run ownCloud on. To install and
 configure your ownCloud server, read [Installing with Docker][installing].
 
 ## Allowing access on port 8080
 
 By default, ownCloud listens on port `443` for SSL connections. Complete the
-following steps to configure ownCloud to listen on a different port.
+following steps to configure ownCloud to listen on a different port:
 
 1.  Change to the directory where the `.env` file you created in [Installing and
     configuring ownCloud](#installing-and-configuring-owncloud) exists. For example:
@@ -72,7 +72,8 @@ ownCloud hostname or IP address.
 
 ## Adding a user account
 
-To add a new [standard user][user] account, complete the following steps:
+To add a new [standard user][user] account, complete the following steps using
+an ownCloud account with administrator privileges:
 
 1.  On your computer, go to `https://<server>/`. Replace `server` with the
     hostname or IP address of your ownCloud server.
@@ -88,14 +89,14 @@ To add a new [standard user][user] account, complete the following steps:
 1.  Click **Create**.
 
 ownCloud will send an email to the user's email address with an activation link
-to set the account password. If you want to a user to have Group Administrator or Super 
-Administrator privileges, read [Granting Administrator Privileges to a User][admin].
+to set the account password. If you want a user to have administrator
+privileges, read [Granting Administrator Privileges to a User][admin].
 
-## Connecting to ownCloud with a desktop or mobile phone
+## Connecting to ownCloud with a computer or mobile phone
 
-You can connect to ownCloud from your computer, a tablet, or mobile phone.
+You can connect to ownCloud from your computer, tablet, or mobile phone.
 
-### Connecting to ownCloud with a desktop computer
+### Connecting to ownCloud with a computer
 
 The ownCloud client runs on Microsoft Windows, OS X, and Linux. To connect to
 ownCloud from your computer, complete the following steps:
@@ -130,13 +131,14 @@ following steps:
     visit the app store for your device and install the ownCloud app from there.
 1.  Open the ownCloud app on your device.
 1.  Enter values for the following fields:
-    - **Server Address**: URL for your ownCloud server. For example,
+    - **Server Address**: Your ownCloud server URL. For example,
       `https://<server>/`. Replace `server` with your ownCloud hostname or IP
       address.
     - **Username**: Your ownCloud username
     - **Password**: Your password
 1.  Tap **Connect**. If you are using a self-signed TLS certificate, you may be
-    asked to trust the certificate.
+    asked to trust the certificate. ownCloud will begin synchronizing your files
+    and directories.
 
 To learn more about the mobile app, read the documentation for your mobile
 device:
